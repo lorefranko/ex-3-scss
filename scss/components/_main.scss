@@ -9,7 +9,7 @@ html {
 }
 
 body {
-  font: 13px/18px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+  font: 13px/18px "futura", Arial, Helvetica, Geneva, sans-serif;
 
   /*
    * Relates to the pseudo class & sibling bug, see
@@ -25,8 +25,13 @@ body {
   overflow: hidden;
 }
 
+img{
+  width: 100%;
+}
+
 .slide {
-  background: #f9f9f9;
+  background: transparent url("..images/truck.jpg") no-repeat fixed center;
+  background-size: cover;
   padding: 20px;
 }
 
@@ -52,7 +57,7 @@ h1 {
   width: 100%;
   margin: 0 0 20px 0;
   padding: 5px 0;
-  background: #333;
+  background: $background-slide;
   border-radius: 3px;
   overflow: hidden;
 }
@@ -68,12 +73,12 @@ h1 {
   display: block;
   padding: 5px 20px;
   text-decoration: none;
-  background: #333;
+  background: $background-slide;
   color: #f9f9f9;
 }
 
 .nav li a:hover {
-  background: #2e2e2e;
+  background: $background-hover;
 }
 
 /* @end nav */
@@ -99,14 +104,16 @@ h1 {
 
 /* The :after pseudo element has an icon that covers the checkbox */
 .slide-toggle:after {
-  content: "!";
-  color: #f9f9f9;
+  content: "+";
+  color: $background-slide;
   background: #333;
   display: block;
   height: 30px;
   width: 38px;
   border-radius: 3px;
-  font: 24px/30px 'responav';
+  padding-top: 8px;
+  font-size: 2em;
+  weight: 700;
   text-align: center;
   margin-left: -19px;
 }
@@ -162,8 +169,6 @@ h1 {
   }
 
   .nav {
-    height: 100%;
-    background: #333;
     border-radius: 0;
 
     /*
@@ -204,13 +209,4 @@ h1 {
 
 }
 
-@font-face {
-  font-family: 'responav';
-  src:url('fonts/responav.eot');
-  src:url('fonts/responav.eot?#iefix') format('embedded-opentype'),
-    url('fonts/responav.woff') format('woff'),
-    url('fonts/responav.ttf') format('truetype'),
-    url('fonts/responav.svg#responav') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
+
